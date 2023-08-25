@@ -19,3 +19,7 @@ EXPOSE 8043
 EXPOSE 883
 EXPOSE 44818
 
+# Prepare Execution Settings
+ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
+CMD [ "./ignition-gateway" ]
+
