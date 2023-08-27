@@ -28,5 +28,6 @@ EXPOSE 44818
 # Prepare Execution Settings
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 # Docker entrypoint
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
+CMD ["./etc/network/netconfig.sh"]
+CMD ["./ignition-gateway"]
 
