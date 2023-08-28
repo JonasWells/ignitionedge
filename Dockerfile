@@ -33,7 +33,7 @@ EXPOSE 44818
 
 RUN chmod +x /entrypoint.sh
 
-CMD ["java", "-jar", "/app/myapp.jar"]
+ENTRYPOINT ["java", "-jar", "/app/myapp.jar"]
 # Set the custom script as the entrypoint
 # ENTRYPOINT ["/entrypoint.sh"]
 
