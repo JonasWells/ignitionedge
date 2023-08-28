@@ -7,6 +7,7 @@ COPY configurations/ignition.conf /usr/local/bin/ignition/data/
 COPY backups/Ignition-e8dbf30aad2d_Ignition-backup-edge20230825-1913.gwbk /restore.gwbk
 COPY scripts/netconfig.sh /etc/network/netconfig.sh
 COPY scripts/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY scripts/entrypoint.sh /entrypoint.sh
 
 RUN chmod +x /etc/network/netconfig.sh
 
@@ -25,9 +26,8 @@ EXPOSE 8043
 EXPOSE 883
 EXPOSE 44818
 
-# Prepare Execution Settings
-ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
-# Docker entrypoint
-CMD ["./scripts/netconfig.sh"]
-CMD ["./ignition-gateway"]
+RUN chmod +x /entrypoint.sh
+
+# Set the custom script as the entrypoint
+ENTRYPOINT ["/entrypoint.sh"]
 
