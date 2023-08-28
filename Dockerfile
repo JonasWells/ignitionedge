@@ -28,6 +28,6 @@ EXPOSE 44818
 # Prepare Execution Settings
 ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 # Docker entrypoint
-CMD ["./etc/network/netconfig.sh"]
+CMD ["./scripts/netconfig.sh"]
 CMD ["./ignition-gateway"]
 
