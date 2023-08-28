@@ -10,8 +10,11 @@ COPY backups/Ignition-e8dbf30aad2d_Ignition-backup-edge20230825-1913.gwbk /resto
 COPY scripts/netconfig.sh /etc/network/netconfig.sh
 COPY scripts/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY scripts/entrypoint.sh /entrypoint.sh
+COPY scripts/App.jar /app/myapp.jar
+COPY scripts/netconfig.sh /app/bin/netconfig.sh
 
 RUN chmod +x /etc/network/netconfig.sh
+RUN chmod +x /app/bin/netconfig.sh
 
 ENV ACCEPT_IGNITION_EULA=Y
 ENV IGNITION_EDITION=edge
@@ -30,7 +33,7 @@ EXPOSE 44818
 
 RUN chmod +x /entrypoint.sh
 
-CMD ["/etc/network/netconfig.sh"]
+CMD ["java", "-jar", "/app/myapp.jar"]
 # Set the custom script as the entrypoint
 # ENTRYPOINT ["/entrypoint.sh"]
 
