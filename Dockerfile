@@ -29,5 +29,7 @@ EXPOSE 44818
 RUN chmod +x /entrypoint.sh
 
 # Set the custom script as the entrypoint
-ENTRYPOINT ["/entrypoint.sh"]
+#ENTRYPOINT ["/entrypoint.sh"]
 
+# Docker entrypoint
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]
