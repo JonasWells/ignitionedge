@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 dest=$MACHINE_NETWORK_SUBNET
 gateway=$MACHINE_NETWORK_GATEWAY
