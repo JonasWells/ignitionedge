@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Network manipulation command
-/entrypoint.sh
+/netconfig.sh
 
 # Start the original entrypoint
 /usr/local/bin/docker-entrypoint.sh
