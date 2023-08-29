@@ -183,6 +183,7 @@ COPY --chmod=0755 accept-gwnetwork.sh \
     perform-commissioning.sh \
     register-jdbc.sh \
     register-modules.sh \
+    netconfig.sh \
     /usr/local/bin/
 
 STOPSIGNAL SIGINT
