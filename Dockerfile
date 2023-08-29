@@ -177,6 +177,9 @@ WORKDIR ${IGNITION_INSTALL_LOCATION}
 # Update path to include embedded java install location
 ENV PATH="${IGNITION_INSTALL_LOCATION}/lib/runtime/jre/bin:${PATH}"
 
+ENV MACHINE_NETWORK_SUBNET ''
+ENV MACHINE_NETWORK_GATEWAY ''
+
 # Copy in Entrypoint and helper scripts
 COPY --chmod=0755 accept-gwnetwork.sh \
     docker-entrypoint.sh \
