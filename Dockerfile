@@ -8,4 +8,4 @@ COPY scripts/netconfig.sh /usr/local/bin/netconfig.sh
 
 RUN chmod +x /usr/local/bin/entrypoint.sh /usr/local/bin/netconfig.sh
 
-ENTRYPOINT ["/entrypoint.sh"]
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
